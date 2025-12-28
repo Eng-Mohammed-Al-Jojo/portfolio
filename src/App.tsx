@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-import "./app.css"; // <- هذا ضروري
+import "./App.css"; // <- هذا ضروري
 import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
