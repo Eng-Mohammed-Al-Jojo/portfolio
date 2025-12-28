@@ -1,6 +1,8 @@
 import { useLang } from "../context/LanguageContext";
 
 type Project = {
+  name: string;
+  description: string;
   tech: string[];
   image?: string;
   github?: string;
@@ -12,12 +14,16 @@ export default function Projects() {
 
   const projects: Project[] = [
     {
+      name: t.projects.items[0].name,
+      description: t.projects.items[0].description,
       tech: ["React", "Tailwind", "Firebase", "TypeScript"],
       image: "https://via.placeholder.com/400",
       github: "https://github.com/username/qr-menu",
       live: "https://taj-res-menu.vercel.app/",
     },
     {
+      name: t.projects.items[1].name,
+      description: t.projects.items[1].description,
       tech: ["React", "TypeScript", "Chart.js", "Tailwind"],
       image: "https://via.placeholder.com/400",
       github: "https://github.com/username/admin-dashboard",
@@ -28,38 +34,36 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="max-w-7xl mx-auto px-6 py-24 transition-colors duration-500"
+      className="max-w-7xl mx-auto px-4 sm:px-6 py-24 transition-colors duration-500"
     >
       <h2
-        className={`text-5xl font-extrabold mb-12 text-gray-900 dark:text-white font-[Lemonada]
-        ${lang === "ar" ? "text-right" : "text-left"}`}
+        className={`text-4xl sm:text-5xl md:text-5xl font-extrabold mb-12 text-gray-900 dark:text-white font-[Lemonada] ${
+          lang === "ar" ? "text-right" : "text-left"
+        }`}
       >
         {t.projects.title}
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12">
         {projects.map((project, idx) => (
           <div
             key={idx}
-            className="group bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-6 hover:-translate-y-2 hover:scale-105 transition-all duration-500"
+            className="group bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-4 sm:p-6 hover:-translate-y-1 sm:hover:-translate-y-2 hover:scale-100 sm:hover:scale-105 transition-all duration-500"
           >
             {project.image && (
               <img
                 src={project.image}
-                alt={t.projects.items[idx].name}
+                alt={project.name}
                 className="w-full h-48 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500"
               />
             )}
-
-            <h3 className="text-3xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors duration-500">
-              {t.projects.items[idx].name}
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors duration-500">
+              {project.name}
             </h3>
-
             <p className="text-gray-600 dark:text-gray-300 mt-3 transition-colors duration-500">
-              {t.projects.items[idx].description}
+              {project.description}
             </p>
-
-            <div className="flex flex-wrap gap-3 mt-4">
+            <div className="flex flex-wrap gap-2 mt-4">
               {project.tech.map((tech) => (
                 <span
                   key={tech}
@@ -69,8 +73,7 @@ export default function Projects() {
                 </span>
               ))}
             </div>
-
-            <div className="flex gap-4 mt-6 flex-wrap">
+            <div className="flex gap-4 mt-4 flex-wrap">
               {project.github && (
                 <a
                   href={project.github}
@@ -81,7 +84,6 @@ export default function Projects() {
                   {t.projects.github}
                 </a>
               )}
-
               {project.live && (
                 <a
                   href={project.live}
