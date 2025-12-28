@@ -41,11 +41,11 @@ export default function Home() {
 
         {/* Image */}
         <div className="flex-1 flex justify-center mb-8 md:mb-0">
-          <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96">
+          <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 md:-translate-22">
             <img
               src="./me-f.png"
               alt="Profile"
-              className="rounded-full shadow-3xl border-8 border-blue-100 dark:border-blue-400 object-cover w-full h-full md:w-auto"
+              className="rounded-full shadow-3xl border-8 border-blue-100 dark:border-blue-400 object-cover w-full h-full md:w-auto md:h-auto"
             />
             <div className="absolute -top-6 -left-6 w-36 h-36 rounded-full border-4 border-blue-300 opacity-50 animate-ping"></div>
           </div>
