@@ -24,7 +24,11 @@ export default function Contact() {
         {t.contact.description}
       </p>
 
-      <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full justify-center">
+      <div
+        className={`flex flex-col sm:flex-row gap-4 sm:gap-6 w-full justify-center ${
+          lang === "ar" ? "sm:flex-row-reverse" : ""
+        }`}
+      >
         <a
           href={`https://wa.me/${whatsappNumber.replace(/\D/g, "")}`}
           target="_blank"

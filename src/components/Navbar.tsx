@@ -35,8 +35,7 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md transition-colors duration-500">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         <h1 className="text-2xl font-extrabold text-blue-600 dark:text-blue-400 font-[Lemonada]">
           {t.nav.name}
         </h1>
@@ -57,7 +56,6 @@ export default function Navbar() {
 
         {/* Controls */}
         <div className="flex items-center gap-2 sm:gap-4">
-          {/* Dark Mode */}
           <button
             onClick={toggleDark}
             className="px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 transition-colors"
@@ -65,7 +63,6 @@ export default function Navbar() {
             {dark ? "☀️" : "🌙"}
           </button>
 
-          {/* Language Switch */}
           <button
             onClick={toggleLang}
             className="px-3 py-1 border rounded"
@@ -73,7 +70,6 @@ export default function Navbar() {
             {lang === "en" ? "AR" : "EN"}
           </button>
 
-          {/* Mobile Hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden w-8 h-8 flex items-center justify-center"

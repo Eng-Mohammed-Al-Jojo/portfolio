@@ -5,31 +5,38 @@ type Project = {
   description: string;
   tech: string[];
   image?: string;
-  github?: string;
   live?: string;
 };
 
 export default function Projects() {
   const { t, lang } = useLang();
+  const isArabic = lang === "ar";
 
   const projects: Project[] = [
     {
       name: t.projects.items[0].name,
       description: t.projects.items[0].description,
       tech: ["React", "Tailwind", "Firebase", "TypeScript"],
-      image: "https://via.placeholder.com/400",
-      github: "https://github.com/username/qr-menu",
       live: "https://taj-res-menu.vercel.app/",
     },
     {
       name: t.projects.items[1].name,
       description: t.projects.items[1].description,
-      tech: ["React", "TypeScript", "Chart.js", "Tailwind"],
-      image: "https://via.placeholder.com/400",
-      github: "https://github.com/username/admin-dashboard",
-      live: "https://admin-dashboard.vercel.app",
+      tech: ["React", "Firebase", "TypeScript", "QRcode", "Tailwind"],
+      live: "https://qadi-hr.vercel.app/dashboard",
+    },
+    {
+      name: t.projects.items[2].name,
+      description: t.projects.items[2].description,
+      tech: ["Laravel", "Blade", "Ajax", "JavaScript", "OracleDB"],
     },
   ];
+
+  // رابط واتساب للشراء
+// استدعاء النص من التعريب
+const whatsText = encodeURIComponent(t.projects.whatsText);
+const whatsappLink = `https://wa.me/00972592133357?text=${whatsText}`;
+
 
   return (
     <section
@@ -38,7 +45,7 @@ export default function Projects() {
     >
       <h2
         className={`text-4xl sm:text-5xl md:text-5xl font-extrabold mb-12 text-gray-900 dark:text-white font-[Lemonada] ${
-          lang === "ar" ? "text-right" : "text-left"
+          isArabic ? "text-right" : "text-left"
         }`}
       >
         {t.projects.title}
@@ -74,16 +81,14 @@ export default function Projects() {
               ))}
             </div>
             <div className="flex gap-4 mt-4 flex-wrap">
-              {project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-xl font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition"
-                >
-                  {t.projects.github}
-                </a>
-              )}
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-green-500 text-white rounded-xl font-semibold hover:bg-green-600 transition"
+              >
+               {t.projects.buyNow}
+              </a>
               {project.live && (
                 <a
                   href={project.live}

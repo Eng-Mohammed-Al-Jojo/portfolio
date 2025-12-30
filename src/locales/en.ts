@@ -24,13 +24,25 @@ export const en = {
           "Digital menu system for restaurants with QR scanning, admin panel, Firebase backend, and real-time order management. Fully responsive with smooth animations.",
       },
       {
-        name: "Admin Dashboard",
+        name: "HR System",
         description:
           "Dynamic dashboard for managing users, charts, and content with authentication, role-based access, and smooth UI interactions.",
       },
+    {
+        name: "Financial Request System",
+        description:
+          "A dynamic dashboard for managing financing requests with a hierarchical administrative structure, user permissions, and database management.",
+      },
+      {
+        name: "Admin Dashboard",
+        description:
+          "A dynamic admin dashboard to manage users, plans, and content, featuring login with different permission levels and a smooth user experience.",
+      },
     ],
-    github: "GitHub",
+    buyNow: "Buy Now",
     live: "Live Demo",
+    whatsText: "Hello, I want to buy this project"
+
   },
    contact: {
     title: "Contact Me",
