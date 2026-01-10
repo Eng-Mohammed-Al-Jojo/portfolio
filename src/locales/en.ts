@@ -57,7 +57,7 @@ export const en = {
     categories: {
       Frontend: "Frontend",
       Backend: "Backend",
-      Framework: "Frameworks",
+      Framework: "Frameworks & Libraries",
       Database: "Databases",
       OS: "Operating Systems",
       Tool: "Tools"

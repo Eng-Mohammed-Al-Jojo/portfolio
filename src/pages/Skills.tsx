@@ -75,9 +75,9 @@ export default function Skills() {
     <div className="space-y-12">
       {categories.map((category) => (
         <div key={category}>
-          <h3 className="text-2xl font-bold mb-4">
-            {isArabic ? t.skills.categories[category as keyof typeof t.skills.categories] : category}
-          </h3>
+         <h3 className="text-2xl font-bold mb-4">
+          {t.skills.categories[category as keyof typeof t.skills.categories]}
+        </h3>
 
         <div className="flex flex-wrap gap-4">
             {skills
