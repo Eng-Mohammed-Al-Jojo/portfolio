@@ -51,4 +51,16 @@ export const en = {
     whatsapp: "WhatsApp",
     email: "Email",
   },
+   skills: {
+    title: "Skills",
+    description: "Technologies and tools I use to develop applications.",
+    categories: {
+      Frontend: "Frontend",
+      Backend: "Backend",
+      Framework: "Frameworks",
+      Database: "Databases",
+      OS: "Operating Systems",
+      Tool: "Tools"
+    }
+  }
 };
